@@ -10,6 +10,7 @@ describe('Park', function() {
     park = new Park ('chompyland', 40)
     dino1 = new Dinosaur ('big mouth', 'carnivore', 20)
     dino2 = new Dinosaur ('horny', 'herbivore', 10)
+    dino3 = new Dinosaur ('horny', 'herbivore', 15)
   });
 
   it('should have a name', function () {
@@ -33,12 +34,28 @@ describe('Park', function() {
     assert.deepStrictEqual(actual, park.dinoCollection);
   });
 
-  it('should be able to remove a dinosaur from its collection');
+  it('should be able to remove a dinosaur from its collection', function () {
+    park.removeDinoFromCollection(dino1);
+    const actual = [];
+    assert.deepStrictEqual(actual, park.dinoCollection);
+  });
 
-  it('should be able to find the dinosaur that attracts the most visitors');
+//=================PROBLEMS================
 
-  it('should be able to find all dinosaurs of a particular species');
+  xit('should be able to find the dinosaur that attracts the most visitors', function () {
+    park.mostVisitors();
+    const actual = [dino1];
+    assert.deepStrictEqual(actual, park.mostVisitors());
+  });
+
+  it('should be able to find all dinosaurs of a particular species', function (){
+    park.allOneSpecies();
+    // const actual =
+    assert.deepStrictEqual(actual, park.dinoCollection[dino2, dino3] );
+  });
 
   it('should be able to remove all dinosaurs of a particular species');
-
-});
+    park.removeDinoSpeciesFromCollection(dino1);
+    const actual = [];
+    assert.deepStrictEqual(actual, park.dinoCollection);
+  });
